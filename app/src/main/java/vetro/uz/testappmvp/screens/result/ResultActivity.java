@@ -5,6 +5,7 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -28,7 +29,9 @@ public class ResultActivity extends AppCompatActivity {
         TextView b = findViewById(R.id.txt_wrong);
         int togri = getIntent().getIntExtra("togri", 0);
         int xato = getIntent().getIntExtra("xato", 0);
-        a.setText(String.valueOf(xato));
-        b.setText(String.valueOf(togri));
+        a.setText(String.valueOf(togri));
+        b.setText(String.valueOf(xato));
+        AppCompatButton btnRestart = findViewById(R.id.btn_finish);
+        btnRestart.setOnClickListener(v-> finish());
     }
 }
